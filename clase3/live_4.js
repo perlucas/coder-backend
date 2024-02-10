@@ -6,14 +6,14 @@
 // el callback que le indicamos al constructor de la Promise, especifica qué tarea debe intentar hacer.
 // En este caso es dividir a por b
 function dividir(a, b) {
-    const miDivision = new Promise((notificarExito, notificarFallo) => {
+    const miDivision = new Promise((resolve, reject) => {
         if (b === 0) {
-            notificarFallo('El divisor es 0!')
+            reject('El divisor es 0!')
             return
         }
 
         const result = a/b
-        notificarExito(result)
+        resolve(result)
     })
 
     return miDivision

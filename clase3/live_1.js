@@ -7,4 +7,5 @@ console.log(saludos)
 
 // ejemplo de uso de map con una función definida (sayGoodbye)
 const sayGoodbye = name => `Goodbye, ${name}`
-console.log(names.map(sayGoodbye))
+
+names.forEach(console.log)
