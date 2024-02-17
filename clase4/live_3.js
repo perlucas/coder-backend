@@ -12,7 +12,7 @@ const main = async () => {
         console.log(fileA, fileB)
     
         // escribir C
-        await fs.promises.writeFile('./C.txt', fileA + '\n' + fileB)
+        await fs.promises.writeFile('./C.txt', fileA + '\n' + fileB, 'utf-8')
     
         // eliminar A y B en paralelo
         await Promise.all([

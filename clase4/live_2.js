@@ -20,7 +20,7 @@ fs.readFile('./A.txt', 'utf-8', (err, fileA) => {
         console.log(fileB)
 
         // escribir C
-        fs.writeFile('./C.txt', fileA + '\n' + fileB, (err) => {
+        fs.writeFile('./C.txt', fileA + '\n' + fileB, 'utf-8', (err) => {
             if (err) {
                 console.log('Error writing C')
                 return
