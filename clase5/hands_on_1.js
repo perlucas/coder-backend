@@ -5,6 +5,7 @@ const filename = './Usuarios.json'
 
 const SECRET_KEY = 'coderhouse'
 
+// usamos el módulo crypto para generar un hash de la contraseña
 const createHashedValue = value => crypto
     .createHmac('sha256', SECRET_KEY)
     .update(value)
