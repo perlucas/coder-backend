@@ -9,8 +9,7 @@ const app = express()
 app.get('/file', async (req, res) => {
     try {
         // la constante __dirname automáticamente contiene el path del directorio que contiene a éste archivo .js
-        const fileContents = await fs.promises.readFile(__dirname + '/../saludo.txt')
-        res.setHeader('Content-Type', 'text/html') // esto es para que no descargue el contenido como binario
+        const fileContents = await fs.promises.readFile(__dirname + '/../saludo.txt', 'utf-8')
         res.send(fileContents)
     }
     catch (err) {
