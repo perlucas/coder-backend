@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Programación Backend!</title>
+</head>
+<body>
+    <h1>Bienvenido al curso de programación backend!</h1>
+    <img src="/images/img1.gif"/>
+
+    <h2>Ingresar mascota:</h2>
+    <form method="post" action="/pets/file" enctype="multipart/form-data">
+        <label>Nombre:</label>
+        <input type="text" name="name"/>
+
+        <label>Tipo:</label>
+        <input type="text" name="type"/>
+
+        <label>Imagen:</label>
+        <input type="file" name="image"/>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
