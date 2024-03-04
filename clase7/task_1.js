@@ -11,8 +11,7 @@ const palabras = ["Frase", "inicial"]
 const frase = () => palabras.join(' ')
 
 app.get('/api/frase', (req, res) => {
-    res.status(200)
-        .json({ frase: frase() })
+    res.status(200).json({ frase: frase() })
 })
 
 app.get('/api/palabras/:pos', (req, res) => {
@@ -23,8 +22,7 @@ app.get('/api/palabras/:pos', (req, res) => {
         return
     }
 
-    res.status(200)
-        .json({ buscada: palabras[index - 1] })
+    res.status(200).json({ buscada: palabras[index - 1] })
 })
 
 app.post('/api/palabras', (req, res) => {
@@ -32,8 +30,7 @@ app.post('/api/palabras', (req, res) => {
 
     palabras.push(palabra)
 
-    res.status(201)
-        .json({ agregada: palabra, pos: palabras.length })
+    res.status(201).json({ agregada: palabra, pos: palabras.length })
 })
 
 
@@ -49,8 +46,7 @@ app.put('/api/palabras/:pos', (req, res) => {
     const anterior = palabras[ index - 1 ]
     palabras[ index - 1 ] = palabra
 
-    res.status(200)
-        .json({ actualizada: palabra, anterior })
+    res.status(200).json({ actualizada: palabra, anterior })
 })
 
 app.delete('/api/palabras/:pos', (req, res) => {
@@ -63,8 +59,7 @@ app.delete('/api/palabras/:pos', (req, res) => {
 
     palabras.splice(index - 1, 1)
 
-    res.status(200)
-        .json({ message: 'Palabra eliminada con éxito' })
+    res.status(200).json({ message: 'Palabra eliminada con éxito' })
 })
 
 app.listen(8080, () => {

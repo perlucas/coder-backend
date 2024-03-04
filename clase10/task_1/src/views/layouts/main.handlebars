@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+
+    {{!-- desde la ruta en express, podremos incluir 1 o varios archivos css indicando su nombre en styles --}}
+    {{#each styles }}
+    <link rel="stylesheet" href="css/{{this}}">
+    {{/each}}
+
+</head>
+
+<body>
+    {{{body}}}
+    
+    {{#if useSocketIO}}
+    <script src="/socket.io/socket.io.js"></script>
+    {{/if}}
+
+    {{!-- desde la ruta en express, podremos incluir 1 o varios archivos js indicando su nombre en scripts --}}
+    {{#each scripts }}
+    <script src="js/{{this}}"></script>
+    {{/each}}
+</body>
+
+</html>

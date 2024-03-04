@@ -1,0 +1,18 @@
+<div>
+    <h1>Bienvenido/a</h1>
+    <h3>Nombre completo: {{firstname}} {{lastname}}</h3>
+    <h3>Email: {{email}}</h3>
+    <h3>Edad: {{age}}</h3>
+    <h3>Teléfono: {{phone}}</h3>
+
+    {{#if isAdmin}}
+    <h3>Comida:</h3>
+        <ul>
+        {{#each food }}
+            <li>
+                Ítem: {{this.name}}, precio: ${{this.price}}
+            </li>
+        {{/each}}
+        </ul>
+    {{/if}}
+</div>
