@@ -1,0 +1,29 @@
+<div>
+    <div>Listado de usuarios:</div>
+    <div id="users-list">
+        <ul>
+            {{#each users}}
+            <li id="list-item-{{id}}">
+                {{name}} {{lastName}} - {{age}} años ({{genre}})
+                <a href='#' onclick="js:removeUser('{{id}}')">Eliminar</a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    <div>
+        <p>Filtrar usuarios:</p>
+        <form action="" id="filter-users">
+            <input type="text" name="name" id="in_name" placeholder="Nombre" />
+            <label for="in_male">Hombre</label>
+            <input type="radio" name="genre" id="in_male" value="H">
+            <label for="in_female">Mujer</label>
+            <input type="radio" name="genre" id="in_female" value="M">
+            <label for="in_both">Ambos</label>
+            <input type="radio" name="genre" id="in_both" value="">
+            <button type="submit">Filtrar</button>
+        </form>
+    </div>
+    <div>
+        <a href="/users/create">Crear usuario</a>
+    </div>
+</div>

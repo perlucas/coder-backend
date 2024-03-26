@@ -1,0 +1,47 @@
+[
+    {
+        "id": "10",
+        "email": "tester@test.com",
+        "name": "John",
+        "lastName": "Wick",
+        "age": 32,
+        "genre": "H",
+        "role": "admin"
+    },
+    {
+        "id": "11",
+        "email": "susie@gmail.com",
+        "name": "Susie",
+        "lastName": "Perez",
+        "age": 22,
+        "genre": "M",
+        "role": "user"
+    },
+    {
+        "name": "Lucas Emanuel",
+        "lastName": "pereyra",
+        "email": "lukaspereyra8@gmail.com",
+        "age": 44,
+        "genre": "H",
+        "id": "6416",
+        "role": "user"
+    },
+    {
+        "name": "asda",
+        "lastName": "asdas",
+        "email": "lukaspereyra82@gmail.com",
+        "age": 22,
+        "genre": "M",
+        "id": "3653",
+        "role": "user"
+    },
+    {
+        "name": "Tito",
+        "lastName": "Speranza",
+        "email": "Tito@gmail.com",
+        "age": 33,
+        "genre": "H",
+        "role": "user",
+        "id": "195"
+    }
+]
