@@ -1,0 +1,38 @@
+[
+    {
+        "id": "10",
+        "email": "tester@test.com",
+        "name": "John",
+        "lastName": "Wick",
+        "age": 32,
+        "genre": "H",
+        "role": "admin"
+    },
+    {
+        "id": "11",
+        "email": "susie@gmail.com",
+        "name": "Susie",
+        "lastName": "Perez",
+        "age": 22,
+        "genre": "M",
+        "role": "user"
+    },
+    {
+        "name": "Lucas Emanuel",
+        "lastName": "pereyra",
+        "email": "lukaspereyra8@gmail.com",
+        "age": 44,
+        "genre": "H",
+        "id": "6416",
+        "role": "user"
+    },
+    {
+        "name": "Daniel",
+        "lastName": "San",
+        "email": "karetekid@gmail.com",
+        "age": 20,
+        "genre": "H",
+        "role": "user",
+        "id": "4265"
+    }
+]
