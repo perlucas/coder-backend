@@ -1,0 +1,18 @@
+<div>
+    <ul>
+        {{#each data.docs}}
+        <li>{{this.firstName}} {{this.lastName}} {{this.email}} (Gender: {{this.gender}} | Group: {{this.group}}),
+            Grade: {{this.grade}}</li>
+        {{/each}}
+    </ul>
+
+    Current page: {{data.page}}
+    {{#if data.hasPrevPage}}
+    <a href="/students?page={{data.prevPage}}">Prev</a>
+    {{/if}}
+
+    {{#if data.hasNextPage}}
+    <a href="/students?page={{data.nextPage}}">Next</a>
+    {{/if}}
+
+</div>

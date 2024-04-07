@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2",
+    "mongoose": "^8.3.0",
+    "mongoose-paginate-v2": "^1.8.0"
+  }
+}
