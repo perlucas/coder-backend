@@ -12,3 +12,4 @@ Repositorio de recursos, ejemplos en vivo y Hands-On. Comisión #53115
 - Tareas asincrónicas en backend
 - Caching
 - Buenas prácticas de programación OO
+- Throttling & Rate Limiting

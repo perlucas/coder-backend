@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "connect-mongo": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.18.0",
+    "mongoose": "^8.3.1",
+    "session-file-store": "^1.5.0"
+  }
+}
