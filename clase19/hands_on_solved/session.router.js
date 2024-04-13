@@ -1,6 +1,5 @@
 const { Router } = require('express')
-const User = require('../hands_on_boilerplate/src/models/user.model')
-const { createHashedValue } = require('../hands_on_boilerplate/src/utils/hashing')
+const User = require('../models/user.model')
 
 const router = Router()
 
@@ -8,7 +7,7 @@ router.post('/login', async (req, res) => {
     const { email, password } = req.body
 
     // 1. verificar que el usuario exista en la BD
-    const user = await User.findOne({ email: email, password: createHashedValue(password) })
+    const user = await User.findOne({ email, password })
     if (!user) {
         return res.status(400).send('Invalid email or password!')
     }
@@ -27,7 +26,7 @@ router.post('/register', async (req, res) => {
             lastName,
             age: +age,
             email,
-            password: createHashedValue(password)
+            password
         })
 
         res.redirect('/')
