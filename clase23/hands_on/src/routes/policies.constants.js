@@ -1,0 +1,7 @@
+module.exports = {
+    PUBLIC: 'PUBLIC',
+    AUTHENTICATED: 'AUTHENTICATED',
+    USER: 'USER',
+    USER_PREMIUM: 'USER_PREMIUM',
+    ADMIN: 'ADMIN'
+}
