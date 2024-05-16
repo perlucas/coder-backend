@@ -13,3 +13,6 @@ Repositorio de recursos, ejemplos en vivo y Hands-On. Comisión #53115
 - Caching
 - Buenas prácticas de programación OO
 - Throttling & Rate Limiting
+- Concurrencia
+- Microservicios
+- Docker (para desarrollar)
