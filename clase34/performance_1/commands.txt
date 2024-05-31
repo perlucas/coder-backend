@@ -1,0 +1,2 @@
+artillery quick --count 40 --num 50 "http://localhost:8080/basica" -o basica.json
+artillery quick --count 40 --num 50 "http://localhost:8080/compleja" -o compleja.json
