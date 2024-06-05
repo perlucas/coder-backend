@@ -1,0 +1,3 @@
+Crear imagen: docker build -t coder-test .
+
+Crear container: docker run -p 8080:8080 --name coder-test-container coder-test
