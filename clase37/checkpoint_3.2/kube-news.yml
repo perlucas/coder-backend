@@ -1,0 +1,68 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kube-news-service
+spec:
+  selector:
+    app: kube-news
+  ports:
+    - port: 3000
+      targetPort: 8080
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-news
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kube-news
+  template:
+    metadata:
+      labels:
+        app: kube-news
+    spec:
+      containers:
+        - name: kube-news-container
+          image: perlucas/coder-news:1.1.0
+          ports:
+            - containerPort: 8080
+          env:
+            - name: MONGO_URI
+              value: mongodb://host.minikube.internal:27017
+            - name: DB_NAME
+              value: coder-news
+            - name: NEWS_API_KEY
+              value: 5ba0fd89d9164e7abd09fa9dbc8d1e38
+            - name: JOBS_ENABLED
+              value: 
+          imagePullPolicy: Always
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: kube-news-job
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: kube-news-job-container
+            image: perlucas/coder-news:1.1.0
+            imagePullPolicy: Always
+            command:
+            - npm
+            - run
+            - sync
+            env:
+            - name: MONGO_URI
+              value: mongodb://host.minikube.internal:27017
+            - name: DB_NAME
+              value: coder-news
+            - name: NEWS_API_KEY
+              value: 5ba0fd89d9164e7abd09fa9dbc8d1e38
+          restartPolicy: OnFailure
