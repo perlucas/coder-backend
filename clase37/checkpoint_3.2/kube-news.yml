@@ -35,7 +35,7 @@ spec:
             - name: DB_NAME
               value: coder-news
             - name: NEWS_API_KEY
-              value: 5ba0fd89d9164e7abd09fa9dbc8d1e38
+              value: abc
             - name: JOBS_ENABLED
               value: 
           imagePullPolicy: Always
@@ -64,5 +64,5 @@ spec:
             - name: DB_NAME
               value: coder-news
             - name: NEWS_API_KEY
-              value: 5ba0fd89d9164e7abd09fa9dbc8d1e38
+              value: abc
           restartPolicy: OnFailure
