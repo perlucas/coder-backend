@@ -1,0 +1,108 @@
+paths:
+  /api/pets:
+    get:
+      summary: Devolver todas las mascotas
+      tags:
+        - Pets
+      responses:
+        "200":
+          description: Operación completada con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    type: array
+                    items:
+                      $ref: "#components/schemas/Pet"
+        "500":
+          description: Error interno
+
+    post:
+      summary: Crear una nueva mascota
+      tags:
+        - Pets
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#components/requestBodies/createPet"
+      responses:
+        "200":
+          description: Operación exitosa
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    $ref: "#components/schemas/Pet"
+        "400":
+          description: Request inválido
+        "500":
+          description: Error en el servidor
+
+components:
+  schemas:
+    Pet:
+      type: object
+      properties:
+        _id:
+          type: ObjectId
+          description: Mongo ID generado
+        name:
+          type: String
+          description: Nombre
+        specie:
+          type: String
+          description: Especie
+        birthDate:
+          type: String
+          format: date-time
+          description: Fecha de cumpleaños
+        adopted:
+          type: Boolean
+          description: Adoptado?
+        owner:
+          type: ObjectId
+          description: ID del usuario dueño
+        image:
+          type: String
+          description: Imagen
+      example:
+        _id: ObjectId("6676dc4649bc71d8a40471a0")
+        name: Firulais
+        specie: dog
+        birthDate: "2023-06-22T11:30:00Z"
+        adopted: false
+        owner: ObjectId("6676dc4649bc71d8a40471a1")
+        image: "http://www.test.com/imagen.png"
+  
+  requestBodies:
+    createPet:
+      type: object
+      properties:
+        name:
+          type: String
+          description: Nombre
+        specie:
+          type: String
+          description: Especie
+        birthDate:
+          type: String
+          format: date-time
+          description: Fecha de cumpleaños
+        image:
+          type: String
+          description: Imagen
+      example:
+        name: Firulais
+        specie: dog
+        birthDate: "2023-06-22T11:30:00Z"
+        image: "http://www.test.com/imagen.png"

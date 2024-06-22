@@ -1,0 +1,26 @@
+paths:
+  /api/adoptions/{uid}/{pid}:
+    post:
+      summary: Adoptar una mascota
+      tags:
+        - Adoptions
+      parameters:
+        - name: uid
+          description: ID del usuario que adoptará
+          required: true
+          in: path
+          schema:
+            $type: String
+        - name: pid
+          description: ID de la mascota a adoptar
+          required: true
+          in: path
+          schema:
+            $type: String
+      responses:
+        "200":
+          description: Oepración exitosa
+        "400":
+          description: Request inválido
+        "404":
+          description: Usuario o mascota no encontrados

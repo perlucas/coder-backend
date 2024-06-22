@@ -1,0 +1,53 @@
+paths:
+  /api/sessions/register:
+    post:
+      summary: Crea y registra un nuevo usuario
+      tags:
+        - Session
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#components/requestBodies/registerUser"
+      responses:
+        "200":
+          description: Usuario registrado con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: String
+                    description: Estado de la operación
+                  payload:
+                    type: String
+                    description: ID del usuario creado
+        "400":
+          description: Request inválido
+        "500":
+          description: Error realizando la operación
+
+components:
+  requestBodies:
+    registerUser:
+      type: object
+      properties:
+        first_name:
+          type: String
+          description: Nombre del usuario
+        last_name:
+          type: String
+          description: Apellido del usuario
+        email:
+          type: String
+          description: Dirección de email
+        password:
+          type: String
+          description: Contraseña
+      example:
+        first_name: Pepito
+        last_name: Pérez
+        email: pepito@gmail.com
+        password: pepito123

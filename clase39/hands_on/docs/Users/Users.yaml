@@ -1,0 +1,107 @@
+paths:
+  /api/users:
+    get:
+      summary: Devuelve todos los usuarios
+      tags:
+        - Users
+      responses:
+        "200":
+          description: Operación resuelta con éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#components/schemas/User"
+        "500":
+          description: Error en el servidor
+  /api/users/{uid}:
+    get:
+      summary: Devuelve un usuario por ID
+      tags:
+        - Users
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          description: ID del usuario
+          schema:
+            $type: String
+      responses:
+        "200":
+          description: Operación exitosa, devuelve el usuario encontrado
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/User"
+        "404":
+          description: Usuario no encontrado en el sistema
+        "500":
+          description: Error en el servidor
+    put:
+      summary: Actualiza un usuario existente
+      tags:
+        - Users
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          description: ID del usuario a modificar
+          schema:
+            $type: String
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#components/requestBodies/updateUser"
+
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        _id:
+          type: ObjectId
+          description: Mongo ID generado
+        first_name:
+          type: String
+          description: Nombre del usuario
+        last_name:
+          type: String
+          description: Apellido del usuario
+        email:
+          type: String
+          description: Dirección de email
+        password:
+          type: String
+          description: Contraseña
+      example:
+        _id: ObjectId("6676dc4649bc71d8a40471a0")
+        first_name: Pepito
+        last_name: Pérez
+        email: pepito@gmail.com
+        password: pepito123
+
+  requestBodies:
+    updateUser:
+      type: object
+      properties:
+        first_name:
+          type: String
+          description: Nombre del usuario
+        last_name:
+          type: String
+          description: Apellido del usuario
+        email:
+          type: String
+          description: Dirección de email
+        password:
+          type: String
+          description: Contraseña
+      example:
+        first_name: Pepito
+        last_name: Pérez
+        email: pepito@gmail.com
+        password: pepito123
