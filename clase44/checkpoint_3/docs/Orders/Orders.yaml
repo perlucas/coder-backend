@@ -1,0 +1,91 @@
+paths:
+  /api/orders:
+    get:
+      summary: Devolver todas las órdenes
+      tags:
+        - Orders
+      responses:
+        "200":
+          description: Operación completada con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    type: array
+                    items:
+                      $ref: "#components/schemas/Order"
+        "500":
+          description: Error interno
+
+    post:
+      summary: Crear una nueva Orden
+      tags:
+        - Orders
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#components/requestBodies/createOrder"
+      responses:
+        "200":
+          description: Operación exitosa
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    $ref: "#components/schemas/Order"
+        "400":
+          description: Request inválido
+        "500":
+          description: Error en el servidor
+
+components:
+  schemas:
+    Order:
+      type: object
+      properties:
+        _id:
+          type: ObjectId
+          description: Mongo ID generado
+        totalPrice:
+          type: Number
+          description: Precio total
+        status:
+          type: string
+          description: Estado de la orden
+        products:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: Product ID
+              q:
+                type: number
+                description: Cantidad
+  
+  requestBodies:
+    createOrder:
+      type: object
+      properties:
+        products:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: Product ID
+              q:
+                type: number
+                description: Cantidad
