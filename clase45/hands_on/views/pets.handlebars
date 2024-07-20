@@ -1,0 +1,18 @@
+<h2>List of Pets</h2>
+
+{{#if data.length}}
+<ul>
+    {{#each data}}
+    <li>
+        <strong>Name:</strong> {{name}},
+        <strong>Species:</strong> {{specie}},
+        <strong>Birth Date:</strong> {{formatDate birthDate}},
+        <strong>Adopted:</strong> {{#if adopted}}Yes{{else}}No{{/if}},
+        <strong>Owner:</strong> {{#if owner}}{{owner}}{{else}}None{{/if}}
+    </li>
+    {{/each}}
+</ul>
+{{else}}
+<p>No pets found.</p>
+{{/if}}
+{{/inline}}

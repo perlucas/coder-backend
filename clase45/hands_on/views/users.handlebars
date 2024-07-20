@@ -1,0 +1,16 @@
+<h2>List of Users</h2>
+
+{{#if data.length}}
+<ul>
+    {{#each data}}
+    <li>
+        <strong>First Name:</strong> {{first_name}},<br>
+        <strong>Last Name:</strong> {{last_name}},<br>
+        <strong>Email:</strong> {{email}},<br>
+        <strong>Role:</strong> {{role}}
+    </li>
+    {{/each}}
+</ul>
+{{else}}
+<p>No users found.</p>
+{{/if}}

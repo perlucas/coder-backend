@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #555;
+            padding: 5px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>{{title}}</h1>
+    </header>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/pets">View Pets</a>
+        <a href="/users">View Users</a>
+        <!-- Add more navigation links as needed -->
+    </nav>
+
+    <div class="container">
+        {{{body}}}
+    </div>
+
+    <footer>
+        &copy; 2024 Adoptme App
+    </footer>
+</body>
+
+</html>
