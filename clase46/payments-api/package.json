@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "stripe": "^16.2.0"
+  },
+  "scripts": {
+    "start": "node --env-file=.env ./src/app"
+  }
+}
